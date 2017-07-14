@@ -68,6 +68,11 @@ describe('Set / Query Value Tests', function () {
         var value = key.getValue('test_value_name');
 
         assert.equal(value, 'test_value');
+
+        key.setValue('test_value_dword', windef.REG_VALUE_TYPE.REG_DWORD, 2);
+        var dwordValue = key.getValue('test_value_dword');
+        assert.equal(dwordValue, 2);
+
         key.close();
     });
 });
